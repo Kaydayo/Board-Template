@@ -11,9 +11,8 @@ const Stacked = ({width, height}:StackProps) => {
     <ChartComponent
       width={width}
       height={height}
-      id="charts"
-      // primaryXAxis={stackedPrimaryXAxis}
-      // primaryYAxis={stackedPrimaryYAxis}
+      id="charts" 
+      primaryYAxis={stackedPrimaryYAxis}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
       legendSettings={{background: 'white'}}

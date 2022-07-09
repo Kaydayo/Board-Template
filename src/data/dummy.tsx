@@ -434,6 +434,7 @@ export const customersGrid = [
 ];
 
 export const employeesGrid = [
+ /*  */
   { headerText: 'Employee',
     width: '150',
     template: gridEmployeeProfile,
