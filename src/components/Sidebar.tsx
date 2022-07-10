@@ -9,7 +9,7 @@ import {links} from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext()!;
+  const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext()!;
   
   const handleCloseSidebar = () => {
     if (activeMenu && screenSize! <= 900) {
@@ -41,7 +41,10 @@ const Sidebar = () => {
               </p>
               {item.links.map((link) => (
                 <NavLink to={`/${link.name}`} key={link.name} onClick={handleCloseSidebar}
-                className ={({isActive})=> isActive ? activeLink: normmalLink}
+                  className={({ isActive }) => isActive ? activeLink : normmalLink}
+                  style={({ isActive }) => ({
+                    backgroundColor:  isActive? currentColor:''
+                  })}
                 >
                   {link.icon}
                   <span className="capitalize">
