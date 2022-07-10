@@ -23,8 +23,8 @@ interface AppContextInterface {
     setScreenSize: React.Dispatch<React.SetStateAction<number | undefined>>,
     currentColor: string,
     currentMode: string,
-    setMode: (e: any) => void,
-    setColor: (e: any) => void,
+    setMode: (e:React.ChangeEvent<HTMLInputElement>) => void,
+    setColor: (color:string) => void,
     setCurrentMode: React.Dispatch<React.SetStateAction<string>>,
     setCurrentColor: React.Dispatch<React.SetStateAction<string>>,
     themeSettings: boolean,
@@ -57,16 +57,20 @@ export const ContextProvider = ({ children }: Props) => {
         setIsClicked({ ...initialState, [clicked]: true })
     }
 
-    const setMode = (e:any) => {
+    const setMode = (e:React.ChangeEvent<HTMLInputElement>) => {
         setCurrentMode(e.target.value)
 
-        localStorage.setItem('themeMode', e.target.value )
+        localStorage.setItem('themeMode', e.target.value)
+        
+        setThemeSettings(false)
     }
 
-     const setColor = (e:any) => {
-        setCurrentColor(e.target.value)
+     const setColor = (color:string) => {
+        setCurrentColor(color)
 
-        localStorage.setItem('colorMode', e.target.value )
+         localStorage.setItem('colorMode', color)
+         
+         setThemeSettings(false)
     }
     return (
         <StateContext.Provider
