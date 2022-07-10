@@ -141,11 +141,11 @@ const customerGridStatus = (props:any) => (
   </div>
 );
 export const areaPrimaryXAxis = {
-  valueType: 'DateTime',
-  labelFormat: 'y',
+  ValueType: 'DateTime',
+  labelFormat: '{value}%',
   majorGridLines: { width: 0 },
-  intervalType: 'Years',
-  edgeLabelPlacement: 'Shift',
+  IntervalType: 'Years',
+  EdgeLabelPlacement: 'Shift',
   labelStyle: { color: 'gray' },
 };
 
@@ -3205,8 +3205,8 @@ export const stackedPrimaryXAxis = {
   minorTickLines: { width: 0 },
   interval: 1,
   lineStyle: { width: 0 },
-  labelIntersectAction: 'Rotate45',
-  valueType: 'Category',
+  LabelIntersectAction: 'Rotate45',
+  ValueType: 'Category',
 };
 
 export const stackedPrimaryYAxis = {

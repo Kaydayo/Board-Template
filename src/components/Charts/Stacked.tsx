@@ -13,6 +13,7 @@ const Stacked = ({width, height}:StackProps) => {
       height={height}
       id="charts" 
       primaryYAxis={stackedPrimaryYAxis}
+      primaryXAxis={stackedPrimaryXAxis}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
       legendSettings={{background: 'white'}}
